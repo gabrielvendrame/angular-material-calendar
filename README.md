@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Remember to install moment adapter
 npm install @angular/material-moment-adapter  
-- import follow modules:  
+- import following modules:  
     - MomentDateModule
     - MatDatepickerModule  
     - MatNativeDateModule
