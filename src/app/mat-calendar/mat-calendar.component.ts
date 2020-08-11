@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { MatCalendar } from '@angular/material/datepicker';
 import * as moment from 'moment';
-import { Moment } from 'moment';
+
 
 @Component({
   selector: 'app-mat-calendar',
@@ -11,14 +11,14 @@ import { Moment } from 'moment';
 export class MatCalendarComponent {
 
   @Output()
-  dateSelected: EventEmitter<Moment> = new EventEmitter();
+  dateSelected: EventEmitter<moment.Moment> = new EventEmitter();
 
   @Output()
   selectedDate = moment();
 
-  @ViewChild('calendar', {static: true}) calendar: MatCalendar<Moment>;
+  @ViewChild('calendar', {static: true}) calendar: MatCalendar<moment.Moment>;
 
-  monthSelected(date: Moment): void {
+  monthSelected(date: moment.Moment): void {
     console.log('month changed');
   }
 
