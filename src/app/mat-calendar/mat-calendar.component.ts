@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Inject, OnDestroy, Output, ViewChild } from '@angular/core';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MAT_MOMENT_DATE_FORMATS, MomentDateAdapter, } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatCalendar } from '@angular/material/datepicker';
 import * as moment from 'moment';
+import { CustomCalendarHeaderComponent } from './custom-calendar-header';
 
 
 @Component({
@@ -17,9 +18,11 @@ import * as moment from 'moment';
       deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS]
     },
     {provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MatCalendarComponent {
+  customCalendarHeader = CustomCalendarHeaderComponent;
 
   @Output()
   dateSelected: EventEmitter<moment.Moment> = new EventEmitter();
@@ -59,3 +62,6 @@ export class MatCalendarComponent {
   }
 
 }
+
+
+
