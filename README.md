@@ -11,3 +11,5 @@ npm install @angular/material-moment-adapter
 - export
     -  MatDatepickerModule
     - MatButtonModule
+    
+![alt text](src/assets/calendar.png)
