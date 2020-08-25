@@ -11,5 +11,6 @@ export class AppComponent {
 
   dateSelected(value: moment.Moment): void {
     this.value = moment(value).format('DD/MM/YYYY');
+    console.log(this.value);
   }
 }
