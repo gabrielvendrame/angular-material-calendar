@@ -10,13 +10,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { CustomCalendarHeaderComponent } from './mat-calendar/custom-calendar-header';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { ConfirmationDialogComponent } from './mat-calendar/confirmation-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MatCalendarComponent,
-    CustomCalendarHeaderComponent
+    CustomCalendarHeaderComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,9 @@ import { CustomCalendarHeaderComponent } from './mat-calendar/custom-calendar-he
     MatCalendarImportsModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
