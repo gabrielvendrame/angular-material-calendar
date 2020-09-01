@@ -1,0 +1,7 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<p mat-dialog-content>{{ data.message }}</p>
+<mat-dialog-actions align="center">
+    <button *ngFor="let action of data.actions; let i = index" mat-button [mat-dialog-close]="action.actionName"
+            cdkFocusInitial>{{ action.text }}
+    </button>
+</mat-dialog-actions>
